@@ -95,7 +95,7 @@ public class TransScale implements DeviceProvider {
 	 * Add a new kernel to the list of kernels that the GPUs in the system can invoke
 	 * @param job
 	 */
-	public void addKernel(KernelAddJob job) {
+	public void addKernel(Kernel job) {
 		synchronized (jobMutex) {
 			// Wait for all devices to become available
 			while (availableDevs.size() != numDevices) {
@@ -106,6 +106,7 @@ public class TransScale implements DeviceProvider {
 				}
 			}
 			
+			// Add this kernel to all devices
 			for (DeviceThread th : this.daemonThreads) {
 				th.addKernel(job);
 			}

@@ -235,6 +235,20 @@ public abstract class CudaPrimitive2D extends CudaPrimitive {
 	}
 	
 	/**
+	 * @return	A copy (i.e. a clone) of the underlying array of this Primitive2D object
+	 */
+	public abstract Object getArray();
+	
+	/**
+	 * @return	The underlying array of this Primitive2D object
+	 * 			WARNING: Do not modify this array directly! Use getArray()
+	 * 					 if you need to modify the returned array!
+	 * 
+	 */
+	public abstract Object getUnclonedArray();
+	
+	
+	/**
 	 * @return	The pitch of the allocated memory as returned by cuMemAllocPitch()
 	 */
 	public long[] getDevPitch() {

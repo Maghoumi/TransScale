@@ -68,13 +68,21 @@ public class KernelInvoke {
 	/** For waiting for this job to complete */
 	protected Object mutex = new Object();
 	
+	/** Holds a reference to the thread that is currently waiting for this job to conclude */
 	protected Thread waitingThread = null;
+	
+	/**
+	 * @return	True if this job is complete, false otherwise
+	 */
+	public boolean isComplete() {
+		return this.jobComplete;
+	}
 	
 	/**
 	 * Wait for this job to complete. Blocks the calling thread until
 	 * this job has been completed on the graphics card.
 	 */
-	public void waitFor() {
+	public final void waitFor() {
 		
 		synchronized(mutex) {
 			while (!jobComplete) {
@@ -89,7 +97,7 @@ public class KernelInvoke {
 	/**
 	 * Notify the threads that are waiting for this job to finish
 	 */
-	public void notifyComplete() {
+	public final void notifyComplete() {
 		
 		synchronized (mutex) {
 			jobComplete = true;

@@ -48,7 +48,7 @@ public class DeviceThread extends Thread {
 	protected Map<String, Invokable> invokables = new HashMap<>();
 	
 	/** The queue that manages the module load requests */
-	protected BlockingQueue<KernelAddJob> kernelJobsQueue = new ArrayBlockingQueue<>(JOB_CAPACITY);
+	protected BlockingQueue<Kernel> kernelJobsQueue = new ArrayBlockingQueue<>(JOB_CAPACITY);
 	
 	/** Queue for all the kernel calls that this thread should make on the CUDA device */
 	protected BlockingQueue<KernelInvoke> invocationJobs = new ArrayBlockingQueue<>(JOB_CAPACITY);
@@ -76,7 +76,7 @@ public class DeviceThread extends Thread {
 	 * Add a new kernel to the list of kernels that this thread can invoke
 	 * @param job
 	 */
-	public synchronized void addKernel(KernelAddJob job) {
+	public synchronized void addKernel(Kernel job) {
 		
 		synchronized(barrier) {
 			synchronized(kernelJobsQueue) {
@@ -117,7 +117,7 @@ public class DeviceThread extends Thread {
 	 * 
 	 * @param job
 	 */
-	protected void loadKernel(KernelAddJob job) {
+	protected void loadKernel(Kernel job) {
 		// Notify parent that I am busy
 		parent.notifyBusy(this);
 		

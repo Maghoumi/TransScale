@@ -25,7 +25,7 @@ import java.util.Map;
  * @author Mehran Maghoumi
  *
  */
-public class KernelAddJob {
+public class Kernel {
 	
 	/** The PTX file containing the CUDA code that we want to load */
 	public File ptxFile;

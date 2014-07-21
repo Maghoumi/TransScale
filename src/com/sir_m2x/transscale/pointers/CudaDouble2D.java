@@ -125,7 +125,7 @@ public class CudaDouble2D extends CudaPrimitive2D {
 	 * 
 	 */
 	public double[] getUnclonedArray() {
-		return this.array.clone();
+		return this.array;
 	}
 	
 	/**

@@ -126,7 +126,7 @@ public class CudaFloat2D extends CudaPrimitive2D {
 	 * 
 	 */
 	public float[] getUnclonedArray() {
-		return this.array.clone();
+		return this.array;
 	}
 	
 	/**
