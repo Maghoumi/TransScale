@@ -11,4 +11,7 @@ of fields (such as a 2D array of char's representing an array of colors in ARGB 
 number that can be treated as a regular "width" similar to any 2D allocated array. The wrapped
 pointers are extensions of CUdeviceptr which allows transparent manipulation using JCuda.
 
-Note that the project is still very immature and more features and samples may be added in the future. 
+Note that the project is still very immature and more features and samples may be added in the future.
+
+## Acknowledgement
+I would like to thank Marco Hutter for creating JCuda and his support. JCuda's homepage is located [here](http://www.jcuda.org)
