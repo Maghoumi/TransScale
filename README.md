@@ -12,6 +12,7 @@ number that can be treated as a regular "width" similar to any 2D allocated arra
 pointers are extensions of CUdeviceptr which allows transparent manipulation using JCuda.
 
 Note that the project is still very immature and more features and samples may be added in the future.
+The sample package of the source code contains the example of a vector addition solution using CUDA.
 
 ## Acknowledgement
 I would like to thank Marco Hutter for creating JCuda and his support. JCuda's homepage is located [here](http://www.jcuda.org)
