@@ -10,3 +10,5 @@ of fields (such as a 2D array of char's representing an array of colors in ARGB 
 2D allocations can be automatically pitched if possible and the pitch values are converted to a
 number that can be treated as a regular "width" similar to any 2D allocated array. The wrapped
 pointers are extensions of CUdeviceptr which allows transparent manipulation using JCuda.
+
+Note that the project is still very immature and more features and samples may be added in the future. 
